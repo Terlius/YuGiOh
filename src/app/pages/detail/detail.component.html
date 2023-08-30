@@ -1,0 +1,44 @@
+<div class="detail-card" *ngIf="card$ | async as card">
+  <div class="top">
+    <img
+      [src]="card.card_images[0].image_url"
+      alt=""
+      srcset=""
+    />
+  </div>
+  <div class="bottom">
+    <h2>{{card.name}}</h2>
+    <div class="item">
+      <p class="description">{{card.desc}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">Ataque</h3>
+      <p class="description">{{card.atk}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">Tipo</h3>
+      <p class="description">{{card.type}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">Subtipo</h3>
+      <p class="description">{{card.race}}</p>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">Market</th>
+            <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of card.card_prices[0] | keyvalue">
+          <th scope="row">{{item.key | marketName}}</th>
+          <td>{{item.value}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-dark" (click)="back()" >Atras</button>
+</div>

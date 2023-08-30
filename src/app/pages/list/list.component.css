@@ -1,0 +1,11 @@
+.formulario-carta{
+    width:40%;
+    margin:  auto;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em,1fr));
+    gap: 0.5em;
+    margin-top: 2em;
+    justify-items: center;
+}
